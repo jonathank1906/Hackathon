@@ -82,6 +82,9 @@ def list_service():
 def home_repairs():
     return render_template('category1.html')
 
+@app.route('/service_post')
+def service_post():
+    return render_template('servicepost1.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

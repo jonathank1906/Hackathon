@@ -1,0 +1,95 @@
+/* General body and container styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Flex container for two main columns */
+.flex-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left column for the description box */
+.box {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Specific styling for the description box (left column) */
+.description {
+    flex: 2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Right column container for the rating and contact boxes */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+/* Styling for section headings */
+.box h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Rating box styling */
+.rating {
+    text-align: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.stars span {
+    cursor: pointer;
+}
+
+/* Contact box styling */
+.contact {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.description ul {
+    list-style-position: inside;  /* Aligns bullets with the text */
+    margin-left: 0;               /* Removes default left margin */
+    padding-left: 0;              /* Ensures no extra padding */
+}
+
+.description h3 {
+    margin-top: 1em;              /* Adds space above each section header */
+}
