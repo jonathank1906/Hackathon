@@ -1,11 +1,8 @@
 /* General body and container styling */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
 }
 
@@ -15,8 +12,11 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 120px auto 20px; /* Increased top margin to move content down */
 }
 
+
+/* Title styling */
 .title {
     text-align: left;
     font-size: 24px;
@@ -84,12 +84,175 @@ body {
     line-height: 1.6;
 }
 
+/* Description box list styling */
 .description ul {
-    list-style-position: inside;  /* Aligns bullets with the text */
-    margin-left: 0;               /* Removes default left margin */
-    padding-left: 0;              /* Ensures no extra padding */
+    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .description h3 {
-    margin-top: 1em;              /* Adds space above each section header */
+    margin-top: 1em;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+}
+
+header img {
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+}
+
+header .logo {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+header nav ul {
+    background-color: #395286;
+    border-radius: 20px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: auto;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header .home {
+    margin: auto;
+    width: 100%;
+    float: left;
+    list-style: none;
+    margin-right: 1rem;
+}
+
+header .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 80px;
+    width: 100%;
+    margin: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.searchBarForm {
+    background-size: 25px;
+    background-image: url('./static/images/search_icon.png');
+    background-position: 14px 6px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.profile-menu p {
+    color: #333 !important;
+    font-size: 16px;
+    padding: 12px 16px;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown .dropbtn {
+    margin-left: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styling for User Reviews Section */
+.reviews-section {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+}
+
+.reviews-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 18px;
+    color: #ffc107;
 }

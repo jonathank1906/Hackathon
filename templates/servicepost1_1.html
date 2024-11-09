@@ -9,45 +9,115 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="title">Electrical Fixing Service</div>
+<header>
+    <div class="logo"> <img src="{{url_for('static',filename='images/WeDo_logo.png') }}"></div>
 
-    <div class="flex-container">
-        <div class="box description">
-            <p>Our Electrical Fixing Service specializes in reliable and efficient repairs for all types of household and commercial electrical issues. With a team of certified electricians, we ensure quality service and customer satisfaction.</p>
-            <h3>Services Offered:</h3>
-            <ul>
-                <li>Wiring repairs and installation</li>
-                <li>Light fixture installation and replacement</li>
-                <li>Outlet and switch troubleshooting</li>
-                <li>Electrical panel upgrades</li>
-                <li>Emergency repair services</li>
-            </ul>
+    <nav>
+        <ul class="headerCenter">
+            <li><a href="{{ url_for('home') }}" class="home">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('home_repairs') }}">Home Repairs and Maintenance</a>
+                    <a href="{{ url_for('vehicle') }}">Vehicle and Transportation</a>
+                    <a href="#">Electronics and Technology</a>
+                    <a href="#">Gardening and Landscaping</a>
+                    <a href="#">Fashion and Clothing</a>
+                </div>
+            </li>
+            <li><a href="{{ url_for('list_service') }}" class="serivceList">List a Service</a></li>
+            <form id="searchBarForm" class="searchBarForm" action="" method="POST">
+                <input id="searchBar"  type="text" placeholder="Search..." class="searchBar"><br>
+            </form>
+        </ul>
+    </nav>
 
-            <h3>Why Choose Us?</h3>
-            <p>With years of experience in the field, our electricians are equipped to handle a wide range of electrical issues. We prioritize safety and efficiency, using high-quality materials and the latest industry techniques to provide lasting solutions.</p>
-
-            <h3>Pricing</h3>
-            <p>Starting from $50 per hour. Contact us for a detailed quote based on your specific requirements.</p>
+    <div class="profile-dropdown">
+        <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+        <div class="profile-menu">
+            {% if 'user_email' in session %}
+                <p>Hello, {{ session['user_email'] }}</p>
+                <a href="{{ url_for('logout') }}">Sign-Out</a>
+            {% else %}
+                <p>Not logged in</p>
+                <a href="{{ url_for('login') }}">Login/Sign-Up</a>
+            {% endif %}
         </div>
+    </div>
+</header>
 
-        <div class="right-column">
-            <div class="box rating">
-                <h2>Rating</h2>
+<main>
+    <div class="container">
+        <div class="title">Electrical Fixing Service</div>
+
+        <div class="flex-container">
+            <div class="box description">
+                <p>Our Electrical Fixing Service specializes in reliable and efficient repairs for all types of household and commercial electrical issues. With a team of certified electricians, we ensure quality service and customer satisfaction.</p>
+                <h3>Services Offered:</h3>
+                <ul>
+                    <li>Wiring repairs and installation</li>
+                    <li>Light fixture installation and replacement</li>
+                    <li>Outlet and switch troubleshooting</li>
+                    <li>Electrical panel upgrades</li>
+                    <li>Emergency repair services</li>
+                </ul>
+
+                <h3>Why Choose Us?</h3>
+                <p>With years of experience in the field, our electricians are equipped to handle a wide range of electrical issues. We prioritize safety and efficiency, using high-quality materials and the latest industry techniques to provide lasting solutions.</p>
+
+                <h3>Pricing</h3>
+                <p>Starting from $50 per hour. Contact us for a detailed quote based on your specific requirements.</p>
+            </div>
+
+            <div class="right-column">
+                <div class="box rating">
+                    <h2>Rating</h2>
+                    <div class="stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                    </div>
+                </div>
+
+                <div class="box contact">
+                    <h2>Contact Information</h2>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Email:</strong> johndoe@example.com</p>
+                    <p><strong>Address:</strong> 123 Main Street, Cityville, ST 12345</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New User Reviews Section -->
+    <div class="reviews-section">
+        <div class="container">
+            <h2>User Reviews</h2>
+            <div class="review">
+                <h3>John Doe</h3>
+                <p>"The electrical fixing service was top-notch! The team was professional, fast, and fixed the issue quickly. Highly recommended!"</p>
                 <div class="stars">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
                 </div>
             </div>
 
-            <div class="box contact">
-                <h2>Contact Information</h2>
-                <p><strong>Phone:</strong> (123) 456-7890</p>
-                <p><strong>Email:</strong> johndoe@example.com</p>
-                <p><strong>Address:</strong> 123 Main Street, Cityville, ST 12345</p>
+            <div class="review">
+                <h3>Jane Smith</h3>
+                <p>"I was really impressed with the service! They fixed my light fixture within hours. Great communication and reasonable pricing."</p>
+                <div class="stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+            </div>
+
+            <div class="review">
+                <h3>Mark Lee</h3>
+                <p>"The team was very knowledgeable. They took the time to explain the issue and fixed it efficiently. I will definitely use their services again."</p>
+                <div class="stars">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+</main>
 
 </body>
 </html>
