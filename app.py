@@ -78,13 +78,25 @@ def logout():
 def list_service():
     return render_template('list_service.html')
 
+# Category 1 page
 @app.route('/home_repairs')
 def home_repairs():
     return render_template('category1.html')
 
-@app.route('/service_post')
-def service_post():
-    return render_template('servicepost1.html')
+# Category 2 page
+@app.route('/vehicle')
+def vehicle():
+    return render_template('category2.html')
+
+# Category 1, Service #1
+@app.route('/service_post_1_1')
+def service_post_1_1():
+    return render_template('servicepost1_1.html')
+
+# Category 2, Service #1
+@app.route('/service_post_2_1')
+def service_post_2_1():
+    return render_template('servicepost2_1.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
