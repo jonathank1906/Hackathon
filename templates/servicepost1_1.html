@@ -33,7 +33,7 @@
     </nav>
 
     <div class="profile-dropdown">
-        <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+        <img src="{{ url_for('static', filename='images/profile_picture.jpg') }}" alt="Profile Picture" class="profile-pic">
         <div class="profile-menu">
             {% if 'user_email' in session %}
                 <p>Hello, {{ session['user_email'] }}</p>
