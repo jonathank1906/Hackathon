@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the main login container */
+.login-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;                  /* Use Flexbox layout */
+    justify-content: center;        /* Horizontally center the content */
+    align-items: center;            /* Vertically center the content */
+    min-height: 100vh;              /* Ensure the body takes up the full height of the viewport */
+    flex-direction: column;         /* Stack items vertically */
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Label and input styling */
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Styling for the "Log In" button */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff; /* Adjusted to a blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login-container button:hover {
+    background-color: #0069d9;
+}
+
+/* Styling for the signup link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.signup-link a {
+    color: #007bff; /* Matching the blue button color */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    color: #0056b3; /* Darker shade for hover */
+    text-decoration: none;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Profile</h1>
+        </header>
+
+        <button class="back-button" onclick="window.history.back()">Back</button>
+
+        <section class="profile-header">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Profile Picture" />
+            </div>
+            <div class="profile-info">
+                <h2>John Doe</h2>
+                <p>Web Developer | Tech Enthusiast</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Location:</strong> New York, USA</p>
+            </div>
+        </section>
+
+        <section class="about-me">
+            <h3>About Me</h3>
+            <p>Hello! I'm John, a passionate web developer. I specialize in front-end development with a focus on user experience and accessibility. I enjoy learning new technologies and building impactful websites.</p>
+        </section>
+
+        <section class="skills">
+            <h3>Skills</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Vue.js</li>
+                <li>Node.js, Express</li>
+                <li>Responsive Design</li>
+                <li>Version Control (Git, GitHub)</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>© 2024 John Doe. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add JavaScript to enable back button functionality
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

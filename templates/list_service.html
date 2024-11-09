@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main_page.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/list_service.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo"> <img src="https://weuse.dk/wp-content/uploads/2021/01/cropped-WeUse-Icon-.png"></div>
+
+        <nav>
+            <ul class="headerCenter">
+                <li><a href="{{ url_for('home') }}" class="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Categories</a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('home_repairs') }}">Home Repairs and Maintenance</a>
+                        <a href="#">Vehicle and Transportation</a>
+                        <a href="#">Electronics and Technology</a>
+                        <a href="#">Gardening and Landscaping</a>
+                        <a href="#">Fashion and Clothing</a>
+                    </div>
+                </li>
+                <li><a href="{{ url_for('list_service') }}" class="serivceList">List a Service</a></li>
+                <form id="searchBarForm" class="searchBarForm" action="" method="POST">
+                    <input id="searchBar"  type="text" placeholder="Search..." class="searchBar"><br>
+                </form>
+            </ul>
+        </nav>
+
+        <div class="profile-dropdown">
+            <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+            <div class="profile-menu">
+            <!-- Greeting message based on login status -->
+            {% if 'user_email' in session %}
+                <p>Hello, {{ session['user_email'] }}</p>
+                <a href="{{ url_for('logout') }}">Sign-Out</a>  <!-- This will log the user out -->
+            {% else %}
+                <p>Not logged in</p>
+                <a href="{{ url_for('login') }}">Login/Sign-Up</a>
+            {% endif %}
+        </div>
+        </div>
+    </header>
+
+    <!-- Main content: Form to list a new service -->
+    <main>
+        <form action="/submit_service" method="POST" class="list-service-form">
+            <label for="serviceName">Service Name:</label>
+            <input type="text" id="serviceName" name="serviceName" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="home_repairs">Home Repairs and Maintenance</option>
+                <option value="vehicle_transportation">Vehicle and Transportation</option>
+                <option value="electronics_technology">Electronics and Technology</option>
+                <option value="gardening_landscaping">Gardening and Landscaping</option>
+                <option value="fashion_clothing">Fashion and Clothing</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="contactInfo">Contact Information:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+
+            <button type="submit">Submit Service</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
